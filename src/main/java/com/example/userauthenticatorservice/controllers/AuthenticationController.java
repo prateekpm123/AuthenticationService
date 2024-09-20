@@ -50,6 +50,12 @@ public class AuthenticationController {
 
     }
 
+    // An API endpoint to Health check
+    @RequestMapping("/status")
+    public Boolean sendHealthCheckup() {
+        return true;
+    }
+
     @RequestMapping("/login")
     public User login(LoginInDto loginInDto) {
         return null;
