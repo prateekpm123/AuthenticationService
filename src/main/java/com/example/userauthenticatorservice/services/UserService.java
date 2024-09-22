@@ -1,6 +1,7 @@
 package com.example.userauthenticatorservice.services;
 
 import com.example.userauthenticatorservice.models.User;
+import com.example.userauthenticatorservice.models.UserStatus;
 import com.example.userauthenticatorservice.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,10 @@ public class UserService {
 
     public User save(User user) {
         return userRepo.save(user);
+    }
+
+    public void updateUserStatus(UserStatus userStatus, Long id) {
+        userRepo.updateUserByEmail(userStatus, id);
     }
 
     public User getUser(String email) {
